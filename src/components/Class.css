@@ -1,0 +1,66 @@
+.class {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 50px 50px;
+
+    background-color: #6C72CC;
+}
+
+.left-class {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 30px;
+}
+
+.left-class h1 {
+    font-size: 40px;
+    font-weight: 600;
+    color: white;
+}
+
+.left-class p {
+    font-weight: 600;
+    color: white;
+}
+
+.right-class {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.right-class button {
+    border: none;
+    background-color: white;
+    color: #6C72CC;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    width: 250px;
+}
+
+.right-class button > img {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+}
+
+.right-class button div {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    padding-left: 10px;
+}
+
+.right-class button div h1 {
+    font-weight: 600;
+}
