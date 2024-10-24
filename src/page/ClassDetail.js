@@ -8,6 +8,13 @@ function ClassDetail() {
   return (
     <div className='class-detail'>
       <Navbar />
+      
+      <div className='cd-header'>
+        <img src='./assets/quote_frame_1.png' />
+        <h1>Persiapan SBMPTN</h1>
+        
+      </div>
+
       <Footer />
     </div>
   );
