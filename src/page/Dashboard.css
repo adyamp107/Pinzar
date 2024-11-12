@@ -1,0 +1,317 @@
+/* ===== Dashboard ===== */
+
+.dashboard {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.dashboard-content {
+    width: 100%;
+    flex: 1;
+    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* ===== Sidebar ===== */
+
+.dashboard-sidebar {
+    width: 250px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+.dashboard-sidebar img {
+    width: 150px;
+    margin: 20px 0;
+}
+.tab-button {
+    background: transparent;
+    border: none;
+    width: 100%;
+    height: 40px;
+    text-align: start;
+    padding-left: 40px;
+    color: #6C72CC;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.dashboard-sidebar button:hover {
+    background: #6C72CC;
+    color: white;
+}
+
+.dashboard-sidebar button:active {
+    background: #6C72CC;
+    color: white;
+    opacity: 0.7;
+}
+
+/* ===== Mainbar ===== */
+
+.dashboard-mainbar {
+    flex: 1;
+    height: 100%;
+    background: #6C72CC;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.dashboard-mainbar-top {
+    width: 100%;
+    height: 100px;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.dashboard-mainbar-top h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #6C72CC;
+}
+
+.dashboard-mainbar-top h2 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #6C72CC;
+}
+
+.dashboard-mainbar-bottom {
+    width: 100%;
+    flex: 1;
+    background: white;
+    border-radius: 10px;
+}
+
+/* ===== j ===== */
+
+.dashboard-mainbar-bottom > div {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-mainbar-bottom > div > form {
+    width: 100%;
+    height: 60px;
+    border: none;
+    outline: none;
+}
+
+.dashboard-mainbar-bottom > div > form > input[type="search"] {
+    width: 250px;
+    height: 40px;
+    padding: 0 10px;
+    outline: none;
+    border: 2px solid #6C72CC;
+    border-radius: 10px 0 0 10px;
+}
+
+.dashboard-mainbar-bottom > div > form > input[type="submit"] {
+    padding: 0 20px;
+    height: 40px;
+    background-color: #6C72CC;
+    color: white;
+    border-radius: 0 10px 10px 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.dashboard-mainbar-bottom > div > div {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.create-class-button {
+    width: 280px;
+    height: 220px;
+    border: 2px solid #6C72CC;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #6C72CC;
+    cursor: pointer;
+}
+
+.create-class-button:hover {
+    background: #6C72CC;
+    color: white;
+}
+.create-class-button:active {
+    opacity: 0.7;
+}
+
+.class-button {
+    width: 280px;
+    height: 220px;
+    border: 2px solid #6C72CC;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.class-button img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 100%;
+    border: 2px solid #6C72CC;
+    cursor: pointer;
+    background: white;
+}
+.class-button input {
+    width: 100%;
+    height: 15px;
+    border: none;
+    outline: none;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    background: transparent;
+}
+.class-button:hover {
+    background-color: #6C72CC;
+}
+.class-button:hover input {
+    color: white;
+}
+.class-button:active {
+    opacity: 0.7;
+}
+/* =====  ===== */
+
+.clicked-1 {
+    background: #6C72CC;
+    color: white;   
+}
+.clicked-1:hover {
+    background: #6C72CC;
+    color: white;   
+}
+.clicked-1:active {
+    background: #6C72CC;
+    color: white;   
+}
+
+
+
+
+
+
+.class-popout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.class-create {
+    background-color: white;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.class-create input[type="text"], .class-create input[type="number"] {
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.class-create label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.class-create input[type="submit"], .class-create button {
+    height: 40px;
+    padding: 0 20px;
+    border: none;
+    background-color: #6C72CC;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.class-create input[type="submit"]:hover, .class-create button:hover {
+    opacity: 0.7;
+}
+
+.class-create > h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #6C72CC;
+}
+
+.class-create div {
+    display: flex;
+    gap: 10px;
+}
+
+.find-class-button {
+    width: 280px;
+    height: 220px;
+    border: 2px solid #6C72CC;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #6C72CC;
+    cursor: pointer;
+}
+
+.find-class-button:hover {
+    background: #6C72CC;
+    color: white;
+}
+.find-class-button:active {
+    opacity: 0.7;
+}

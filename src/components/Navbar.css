@@ -1,14 +1,14 @@
 .navbar {
   background-color: white;
   width: 100%;
-  height: fit-content;
+  min-height: fit-content;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 10px;
 
   padding: 10px 50px;
-  border-bottom: 1px solid #6C72CC;
+  border-bottom: 2px solid #6C72CC;
 }
 
 .navbar-left-bar {
@@ -21,35 +21,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 50px;
 }
 
-.navbar-right-bar button {
-  border: none;
-  width: 120px;
-  height: 40px;
-  border-radius: 10px;
-  border: 2px solid #6C72CC;
-}
-
-.navbar-login-button {
-  background-color: white;
+.navbar-right-bar a{
   color: #6C72CC;
-  font-weight: 600;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
 }
 
-.navbar-signup-button {
-  background-color: #6C72CC;
-  color: white;
-  font-weight: 600;
-}
-
-.navbar-login-button:hover {
-  background-color: #6C72CC;
-  color: white;
-}
-
-.navbar-signup-button:hover {
-  background-color: white;
-  color: #6C72CC;
+.navbar-right-bar a:hover{
+  border-bottom: 2px solid #6C72CC;
+  padding-bottom: 1px;
 }
