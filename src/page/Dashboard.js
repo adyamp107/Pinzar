@@ -9,6 +9,22 @@ function Dashboard() {
     const [popoutState, setPopoutState] = useState(false);
     const [tabState, setTabState] = useState('jm');
 
+    // const [courseNameState, setCourseNameState] = useState('');
+    // const [courseDescriptionState, setCourseDescriptionState] = useState('');
+    // const [courseStartState, setCourseStartState] = useState('');
+    // const [courseEndState, setCourseEndState] = useState('');
+    // const [courseCostState, setCourseCostState] = useState('');
+    // const [courseLinkState, setCourseLinkState] = useState('');
+    // const [courseTransactionState, setCourseTransactionState] = useState('');
+
+    const courseNameRef = useRef();
+    const courseDescriptionRef = useRef();
+    const courseStartRef = useRef();
+    const courseEndRef = useRef();
+    const courseCostRef = useRef();
+    const courseLinkRef = useRef();
+    const courseTransactionRef = useRef();
+
     const jmRef = useRef();
     const jbRef = useRef();
     const jkRef = useRef();
@@ -59,6 +75,24 @@ function Dashboard() {
         window.location.href = process.env.REACT_APP_URL + '/join-class';
     };
 
+    const handleCreateClass = () => {
+        const course = {
+            name: courseNameRef.current?.value,
+            description: courseDescriptionRef.current?.value,
+            start: courseStartRef.current?.value,
+            end: courseEndRef.current?.value,
+            cost: courseCostRef.current?.value,
+            link: courseLinkRef.current?.value,
+            transaction: courseTransactionRef.current?.value
+        }
+        console.log(course);
+        console.log(process.env.REACT_APP_CREATE_CLASS);
+        try {
+            // fetch api create class
+        } catch (error) {
+            alert('Maaf, ada kesalahan saat membuat kelas baru!');
+        }
+    };
 
     return (
         <div className='dashboard'>
@@ -84,10 +118,23 @@ function Dashboard() {
                                         Buat Kelas Baru
                                     </div>
                                     <div className='class-button' onClick={HandleYourClass}>
-                                        <img src='./assets/teacher2.png' />
-                                        <input type='text' defaultValue={"Name: Adya Muhammad Prawira"} readOnly />
-                                        <input type='text' defaultValue={"Peringkat: 100 Besar"} readOnly />
-                                        <input type='text' defaultValue={"Pelajaran: Trigonometri"} readOnly />
+                                        <input type='text' className='course' defaultValue={"Trigonometri"} readOnly />
+                                        <div>
+                                            <img src='./assets/teacher2.png' />
+                                            <input type='text' className='teacher-name' defaultValue={"Adya Muhammad Prawira"} readOnly />
+                                            <input type='text' className='teacher-rate' defaultValue={"TOP 100"} readOnly />
+                                        </div>
+                                        <input type='text' defaultValue={"Mulai: 12/11/2024 | 15:20"} readOnly />
+                                        <input type='text' defaultValue={"Selesai: 12/11/2024 | 17:20"} readOnly />
+                                        <input type='text' defaultValue={"Harga: Rp 20.000,-"} readOnly />
+                                    </div>
+                                    <div className='class-button' onClick={HandleYourClass}>
+                                        <input type='text' className='course' defaultValue={"Trigonometri"} readOnly />
+                                        <div>
+                                            <img src='./assets/teacher2.png' />
+                                            <input type='text' className='teacher-name' defaultValue={"Adya Muhammad Prawira"} readOnly />
+                                            <input type='text' className='teacher-rate' defaultValue={"TOP 100"} readOnly />
+                                        </div>
                                         <input type='text' defaultValue={"Mulai: 12/11/2024 | 15:20"} readOnly />
                                         <input type='text' defaultValue={"Selesai: 12/11/2024 | 17:20"} readOnly />
                                         <input type='text' defaultValue={"Harga: Rp 20.000,-"} readOnly />
@@ -101,19 +148,34 @@ function Dashboard() {
                                         Jelajahi Kelas
                                     </div>
                                     <div className='class-button' onClick={HandleClassInfo}>
-                                        <img src='./assets/teacher2.png' />
-                                        <input type='text' defaultValue={"Name: Adya Muhammad Prawira"} readOnly />
-                                        <input type='text' defaultValue={"Peringkat: 100 Besar"} readOnly />
-                                        <input type='text' defaultValue={"Pelajaran: Trigonometri"} readOnly />
+                                        <input type='text' className='course' defaultValue={"Trigonometri"} readOnly />
+                                        <div>
+                                            <img src='./assets/teacher2.png' />
+                                            <input type='text' className='teacher-name' defaultValue={"Adya Muhammad Prawira"} readOnly />
+                                            <input type='text' className='teacher-rate' defaultValue={"TOP 100"} readOnly />
+                                        </div>
                                         <input type='text' defaultValue={"Mulai: 12/11/2024 | 15:20"} readOnly />
                                         <input type='text' defaultValue={"Selesai: 12/11/2024 | 17:20"} readOnly />
                                         <input type='text' defaultValue={"Harga: Rp 20.000,-"} readOnly />
                                     </div>
                                     <div className='class-button' onClick={HandleClassInfo}>
-                                        <img src='./assets/teacher2.png' />
-                                        <input type='text' defaultValue={"Name: Adya Muhammad Prawira"} readOnly />
-                                        <input type='text' defaultValue={"Peringkat: 100 Besar"} readOnly />
-                                        <input type='text' defaultValue={"Pelajaran: Trigonometri"} readOnly />
+                                        <input type='text' className='course' defaultValue={"Trigonometri"} readOnly />
+                                        <div>
+                                            <img src='./assets/teacher2.png' />
+                                            <input type='text' className='teacher-name' defaultValue={"Adya Muhammad Prawira"} readOnly />
+                                            <input type='text' className='teacher-rate' defaultValue={"TOP 100"} readOnly />
+                                        </div>
+                                        <input type='text' defaultValue={"Mulai: 12/11/2024 | 15:20"} readOnly />
+                                        <input type='text' defaultValue={"Selesai: 12/11/2024 | 17:20"} readOnly />
+                                        <input type='text' defaultValue={"Harga: Rp 20.000,-"} readOnly />
+                                    </div>
+                                    <div className='class-button' onClick={HandleClassInfo}>
+                                        <input type='text' className='course' defaultValue={"Trigonometri"} readOnly />
+                                        <div>
+                                            <img src='./assets/teacher2.png' />
+                                            <input type='text' className='teacher-name' defaultValue={"Adya Muhammad Prawira"} readOnly />
+                                            <input type='text' className='teacher-rate' defaultValue={"TOP 100"} readOnly />
+                                        </div>
                                         <input type='text' defaultValue={"Mulai: 12/11/2024 | 15:20"} readOnly />
                                         <input type='text' defaultValue={"Selesai: 12/11/2024 | 17:20"} readOnly />
                                         <input type='text' defaultValue={"Harga: Rp 20.000,-"} readOnly />
@@ -128,19 +190,34 @@ function Dashboard() {
                                 </form>
                                 <div>
                                     <div className='class-button' onClick={HandleJoinClass}>
-                                        <img src='./assets/teacher2.png' />
-                                        <input type='text' defaultValue={"Name: Adya Muhammad Prawira"} readOnly />
-                                        <input type='text' defaultValue={"Peringkat: 100 Besar"} readOnly />
-                                        <input type='text' defaultValue={"Pelajaran: Trigonometri"} readOnly />
+                                        <input type='text' className='course' defaultValue={"Trigonometri"} readOnly />
+                                        <div>
+                                            <img src='./assets/teacher2.png' />
+                                            <input type='text' className='teacher-name' defaultValue={"Adya Muhammad Prawira"} readOnly />
+                                            <input type='text' className='teacher-rate' defaultValue={"TOP 100"} readOnly />
+                                        </div>
                                         <input type='text' defaultValue={"Mulai: 12/11/2024 | 15:20"} readOnly />
                                         <input type='text' defaultValue={"Selesai: 12/11/2024 | 17:20"} readOnly />
                                         <input type='text' defaultValue={"Harga: Rp 20.000,-"} readOnly />
                                     </div>
                                     <div className='class-button' onClick={HandleJoinClass}>
-                                        <img src='./assets/teacher2.png' />
-                                        <input type='text' defaultValue={"Name: Adya Muhammad Prawira"} readOnly />
-                                        <input type='text' defaultValue={"Peringkat: 100 Besar"} readOnly />
-                                        <input type='text' defaultValue={"Pelajaran: Trigonometri"} readOnly />
+                                        <input type='text' className='course' defaultValue={"Trigonometri"} readOnly />
+                                        <div>
+                                            <img src='./assets/teacher2.png' />
+                                            <input type='text' className='teacher-name' defaultValue={"Adya Muhammad Prawira"} readOnly />
+                                            <input type='text' className='teacher-rate' defaultValue={"TOP 100"} readOnly />
+                                        </div>
+                                        <input type='text' defaultValue={"Mulai: 12/11/2024 | 15:20"} readOnly />
+                                        <input type='text' defaultValue={"Selesai: 12/11/2024 | 17:20"} readOnly />
+                                        <input type='text' defaultValue={"Harga: Rp 20.000,-"} readOnly />
+                                    </div>
+                                    <div className='class-button' onClick={HandleJoinClass}>
+                                        <input type='text' className='course' defaultValue={"Trigonometri"} readOnly />
+                                        <div>
+                                            <img src='./assets/teacher2.png' />
+                                            <input type='text' className='teacher-name' defaultValue={"Adya Muhammad Prawira"} readOnly />
+                                            <input type='text' className='teacher-rate' defaultValue={"TOP 100"} readOnly />
+                                        </div>
                                         <input type='text' defaultValue={"Mulai: 12/11/2024 | 15:20"} readOnly />
                                         <input type='text' defaultValue={"Selesai: 12/11/2024 | 17:20"} readOnly />
                                         <input type='text' defaultValue={"Harga: Rp 20.000,-"} readOnly />
@@ -155,31 +232,31 @@ function Dashboard() {
             {
                 popoutState ? (
                     <div className='class-popout'>
-                        <form className='class-create' onSubmit={(event) => { event.preventDefault(); setPopoutState(false) }}>
+                        <form className='class-create' onSubmit={(event) => { event.preventDefault(); setPopoutState(false); handleCreateClass(); }}>
                             <h1>Buat Kelas:</h1>
                             <label>
                                 Nama Pelajaran:
-                                <input type='text' placeholder='Nama Pelajaran' required />
+                                <input type='text' placeholder='Nama Pelajaran' ref={courseNameRef} required />
                             </label>
                             <label>
                                 Deskripsi Pelajaran:
-                                <input type='text' placeholder='Deskripsi Pelajaran' required />
+                                <input type='text' placeholder='Deskripsi Pelajaran' ref={courseDescriptionRef} required />
                             </label>
                             <label>
                                 Mulai:
-                                <input type='date' required />
+                                <input type='datetime-local' ref={courseStartRef} required />
                             </label>
                             <label>
                                 Selesai:
-                                <input type='date' required />
+                                <input type='datetime-local' ref={courseEndRef} required />
                             </label>
                             <label>
                                 Harga:
-                                <input type='number' placeholder='Harga' required />
+                                <input type='number' placeholder='Harga' ref={courseCostRef} required />
                             </label>
                             <label>
                                 Link:
-                                <input type='text' placeholder='Link' required />
+                                <input type='text' placeholder='Link' ref={courseLinkRef} required />
                             </label>
                             <label>
                                 <p>
@@ -188,7 +265,7 @@ function Dashboard() {
                                 <p>
                                     Bukti Pembayaran:
                                 </p>
-                                <input type='file' required />
+                                <input type='file' ref={courseTransactionRef} required />
                             </label>
                             <div>
                                 <input type='submit' value={"Kirim Bukti Pembayaran"} />

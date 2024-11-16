@@ -9,6 +9,25 @@ import { useState, useEffect, useRef } from 'react';
 function JoinClass() {
     const [popoutState, setPopoutState] = useState(false);
 
+    const transactionRef = useRef();
+
+    useEffect(() => {
+
+    }, []);
+
+    const handleTransaction = () => {
+        const join = {
+            transaction: transactionRef.current?.value
+        };
+        console.log(join);
+        console.log(process.env.REACT_APP_JOIN_CLASS);
+        try {
+            // fetch api join class
+        } catch (error) {
+            alert('Maaf, ada kesalahan saat join class!');
+        }
+    };
+
     return (
         <div className='class'>
             <Navbar/>
@@ -17,7 +36,7 @@ function JoinClass() {
                     <img src='./assets/teacher2.png' />
                     <h1>Hello, Lets Study with Adya Muhammad Prawira</h1>
                 </div>
-                <form onSubmit={(event) => { event.preventDefault(); setPopoutState(true) }}>
+                <form onSubmit={(event) => { event.preventDefault(); setPopoutState(true); handleTransaction(); }}>
                     <h2>Pelajaran:</h2>
                     <label>
                         <p>

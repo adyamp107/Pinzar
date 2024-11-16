@@ -9,6 +9,25 @@ import { useState, useEffect, useRef } from 'react';
 function ClassInfo() {
     const [popoutState, setPopoutState] = useState(false);
 
+    const rateRef = useRef();
+
+    useEffect(() => {
+
+    }, []);
+
+    const handleRateTeacher = () => {
+        const rate = {
+            rate: rateRef.current?.value
+        }
+        console.log(rate);
+        console.log(process.env.REACT_APP_RATE_TEACHER);
+        try {
+            // fetch api rate teacher
+        } catch (error) {
+            alert('Maaf, ada kesalahan saat rate teacher!');
+        }
+    };
+
     return (
         <div className='class'>
             <Navbar/>
@@ -65,9 +84,9 @@ function ClassInfo() {
                 </form>
                 <button onClick={() => { window.location.href = process.env.REACT_APP_URL + '/profile' }} >Lihat Profil Pengajar</button>
                 <div className='rating'>
-                    <form>
+                    <form onSubmit={(event) => { event.preventDefault(); handleRateTeacher(); }}>
                         Beri Penilaian (1 - 100):
-                        <input type='number' placeholder='Nilai' required />
+                        <input type='number' placeholder='Nilai' ref={rateRef} required />
                         <input type='submit' value={'Nilai'} />
                     </form>
                 </div>
